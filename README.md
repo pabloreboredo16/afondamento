@@ -4,7 +4,7 @@ Este repositorio reúne una colección de programas desarrollados en Java sobre 
 
 ## 📁 Contenido
 
-El código fuente (`src/`) se encuentra organizado por:
+El código (`src/`) se encuentra organizado por:
 
 - **Operaciones Aritméticas:**
   - Suma y resta de matrices.
