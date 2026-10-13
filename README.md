@@ -6,10 +6,10 @@ Este repositorio reúne una colección de programas desarrollados en Java sobre 
 
 El código (`src/`) se encuentra organizado por:
 
-- **Operaciones Aritméticas:**
+- **Operaciones:**
   - Suma y resta de matrices.
   - Producto de matrices.
-- **Propiedades y Análisis de Matrices:**
+- **Propiedades y Análisis:**
   - Matriz traspuesta.
   - Cálculo de la traza.
   - Comprobación de simetría.
