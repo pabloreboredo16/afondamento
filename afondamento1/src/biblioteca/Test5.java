@@ -14,19 +14,20 @@ public class Test5 {
         int rows1 = Integer.parseInt(sc.nextLine());
         System.out.println("Introduce el número de columnas de la primera matriz: ");
         int cols1 = Integer.parseInt(sc.nextLine());
-        int[][] matriz1 = rellenarMatriz(rows1, cols1);
 
         // Pedir el número de filas y columnas de la segunda matriz
         System.out.println("\nIntroduce el número de filas de la segunda matriz: ");
         int rows2 = Integer.parseInt(sc.nextLine());
         System.out.println("Introduce el número de columnas de la segunda matriz: ");
         int cols2 = Integer.parseInt(sc.nextLine());
+
+        // Rellenar matrices
         int[][] matriz2 = rellenarMatriz(rows2, cols2);
+        int[][] matriz1 = rellenarMatriz(rows1, cols1);
         
         // Mostrar la primera matriz
         System.out.println("\nMatriz 1:");
         imprimirMatriz(matriz1);
-
         // Mostrar la segunda matriz
         System.out.println("\nMatriz 2:");
         imprimirMatriz(matriz2);

@@ -28,13 +28,14 @@ public class Basicas {
         }
     }
 
-    /*  Funcion que traspone una matriz de enteros
-        Algoritmo para invertir los indides de las filas y columnas:
-        For i = 0 hasta numeroFilasOriginal
-            For j = 0 hasta numeroColumnasOriginal
-                matrizOriginal[i][j] -> matrizTranspuesta[j][i]
-            Fin
+    /*  
+    Funcion que traspone una matriz de enteros
+    Algoritmo para invertir los indides de las filas y columnas:
+    For i = 0 hasta numeroFilasOriginal
+        For j = 0 hasta numeroColumnasOriginal
+            matrizOriginal[i][j] -> matrizTranspuesta[j][i]
         Fin
+    Fin
     */
     // FUNCION PARA TRASPONER UNA MATRIZ
     public static int[][] trasponerMatriz(int[][] array) {
@@ -157,8 +158,6 @@ public class Basicas {
     }
 
     // FUNCION PARA CALCULAR LA MATRIZ PRUDUCTO DE DOS MATRICES DE ENTEROS
-    // Solo si el numero de columnas de la primera es igual al numero de filas de la segunda
-    // El resultado es un array de mismas filas que la primera y mismas columnas de la segundaç
     public static int[][] productoMatrices(int[][] array1, int[][] array2) {
         // Obtener las filas y columnas de la matriz
         int rows1 = array1.length;
