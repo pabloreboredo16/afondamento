@@ -33,16 +33,13 @@ public class Test5 {
 
         
 
-        // Calcular la suma y resta de matrices 
+        // Calcular la suma, resta y pruducto de matrices 
         int[][] suma = sumaMatrices(matriz1, matriz2);
         int[][] resta = restaMatrices(matriz1, matriz2);
-        int[][] producto = productoMatrices(matriz1, matriz2);
 
         System.out.println("\nSuma de las matrices: ");
         imprimirMatriz(suma);
         System.out.println("\nResta de las matrices: ");
         imprimirMatriz(resta);
-        System.out.println("\nProducto de las matrices: ");
-        imprimirMatriz(producto);
     }
 }

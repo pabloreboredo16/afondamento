@@ -18,8 +18,6 @@ public class Basicas {
         return array;
     }
     
-
-
     // FUNCION PARA IMPRIMIR MATRIZ  
     public static void imprimirMatriz(int[][] array) {
         for(int[] row : array) {
@@ -30,8 +28,6 @@ public class Basicas {
         }
     }
 
-
-
     /*  Funcion que traspone una matriz de enteros
         Algoritmo para invertir los indides de las filas y columnas:
         For i = 0 hasta numeroFilasOriginal
@@ -40,7 +36,7 @@ public class Basicas {
             Fin
         Fin
     */
-   // FUNCION PARA TRASPONER UNA MATRIZ
+    // FUNCION PARA TRASPONER UNA MATRIZ
     public static int[][] trasponerMatriz(int[][] array) {
         // Obtener las filas y columnas de la matriz original
         int rows = array.length;
@@ -55,8 +51,6 @@ public class Basicas {
         // Devuelve la traspuesta
         return traspuesta;
     }     
-
-
 
     // FUNCION PARA CALCULAR LA TRAZA DE UNA MATRIZ CUADRADA
     public static int traza(int[][] array) {
@@ -74,8 +68,6 @@ public class Basicas {
         }
         return traza;
     }
-
-
 
     // FUNCION PARA COMPROBAR SI UNA MATRIZ ES SIMETRICA
     public static boolean esSimetrica(int[][] array) {
@@ -98,8 +90,6 @@ public class Basicas {
         return esSimetrica;
     }
 
-
-    
     // FUNCION PARA COMPROBAR SI UNA MATRIZ ES DIAGONAL
     public static boolean esDiagonal(int[][] array) {
         // Obtener las filas y columnas de la matriz
@@ -121,8 +111,6 @@ public class Basicas {
         }
         return esDiagonal;
     }
-
-
 
     // FUNCION PARA CALCULAR LA MATRIZ SUMA DE DOS MATRICES DE ENTEROS
     public static int[][] sumaMatrices(int[][] array1, int[][] array2) {
@@ -146,8 +134,6 @@ public class Basicas {
         return suma;
     }
 
-
-    
     // FUNCION PARA CALCULAR LA MATRIZ RESTA DE DOS MATRICES DE ENTEROS
     public static int[][] restaMatrices(int[][] array1, int[][] array2) {
         // Obtener las filas y columnas de la matriz
@@ -170,8 +156,6 @@ public class Basicas {
         return resta;
     }
 
-
-    
     // FUNCION PARA CALCULAR LA MATRIZ PRUDUCTO DE DOS MATRICES DE ENTEROS
     // Solo si el numero de columnas de la primera es igual al numero de filas de la segunda
     // El resultado es un array de mismas filas que la primera y mismas columnas de la segundaç
