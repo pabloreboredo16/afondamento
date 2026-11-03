@@ -180,4 +180,43 @@ public class Basicas {
         }
         return producto;
     }
+
+    public static int determinante(int[][] array) {
+        // Obtener las filas y columnas de la matriz
+        int rows = array.length;
+        int cols = array[0].length;
+        // Para calcualar el determinante la matriz debe ser cuadrada
+        if (rows != cols) {
+            throw new IllegalArgumentException("La matriz debe ser cuadrada para calcular el determinante");
+        }
+        // Calcular el determinante de la matriz
+        if (rows == 1) {
+            return array[0][0];
+        } else if (rows == 2) {
+            return array[0][0] * array[1][1] - array[0][1] * array[1][0];
+        } else {
+            int det = 0;
+            for (int j = 0; j < cols; j++) {
+                det += Math.pow(-1, j) * array[0][j] * determinante(subMatriz(array, 0, j));
+            }
+            return det;
+        }
+    }
+
+    // Metodo auxiliar para calcular la submatriz eliminando [i][j]
+    private static int[][] subMatriz(int[][] array, int row, int col) {
+        int rows = array.length;
+        int cols = array[0].length;
+        int[][] subMatriz = new int[rows - 1][cols - 1];
+        for (int i = 0, subI = 0; i < rows; i++) {
+            if (i == row) continue;
+            for (int j = 0, subJ = 0; j < cols; j++) {
+                if (j == col) continue;
+                subMatriz[subI][subJ] = array[i][j];
+                subJ++;
+            }
+            subI++;
+        }
+        return subMatriz;
+    }
 }

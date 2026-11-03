@@ -39,8 +39,7 @@ public class Test7 {
         imprimirMatriz(matriz3);
 
         // Calcular el pruducto de matrices 
-        int[][] productoAxB = productoMatrices(matriz1, matriz2);
-        int[][] producto = productoMatrices(productoAxB, matriz3);
+        int[][] producto = productoMatrices(productoMatrices(matriz1, matriz2), matriz3);
 
         System.out.println("\nProducto de las matrices: ");
         imprimirMatriz(producto);
