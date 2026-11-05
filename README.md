@@ -13,3 +13,4 @@ El código (`src/`) se encuentra organizado por:
   - Cálculo de la traza.
   - Comprobación de simetría.
   - Verificación de matriz diagonal.
+  - Calculo del determinante.
