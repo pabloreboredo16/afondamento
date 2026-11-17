@@ -18,25 +18,26 @@ public class Basicas {
         return array;
     }
     
-    // FUNCION PARA IMPRIMIR MATRIZ  
+    // FUNCION PARA IMPRIMIR MATRIZ DE ENTEROS
     public static void imprimirMatriz(int[][] array) {
-        for(int[] row : array) {
-            for(int elemento : row) {
-                System.out.print(elemento + " ");
+    for (int[] row : array) {
+        for (int elemento : row) {
+            System.out.printf("%5d ", elemento);
+        }
+        System.out.println();
+    }
+}
+
+    // FUNCION PARA IMPRIMIR MATRIZ DE DOUBLES (3 DECIMALES)
+    public static void imprimirMatriz(double[][] array) {
+        for(double[] row : array) {
+            for(double elemento : row) {
+                System.out.printf("%8.3f ", elemento);
             }
             System.out.println();
         }
     }
 
-    /*  
-    Funcion que traspone una matriz de enteros
-    Algoritmo para invertir los indides de las filas y columnas:
-    For i = 0 hasta numeroFilasOriginal
-        For j = 0 hasta numeroColumnasOriginal
-            matrizOriginal[i][j] -> matrizTranspuesta[j][i]
-        Fin
-    Fin
-    */
     // FUNCION PARA TRASPONER UNA MATRIZ
     public static int[][] trasponerMatriz(int[][] array) {
         // Obtener las filas y columnas de la matriz original
@@ -181,6 +182,31 @@ public class Basicas {
         return producto;
     }
 
+    // FUNCION PARA CALCULAR LA MATRIZ PRUDUCTO DE UNA MATRIZ DE ENTEROS POR OTRA DE DOUBLES
+    public static double[][] productoMatrices(int[][] array1, double[][] array2) {
+        // Obtener las filas y columnas de la matriz
+        int rows1 = array1.length;
+        int cols1 = array1[0].length;
+        int rows2 = array2.length;
+        int cols2 = array2[0].length;
+        // Comprobar que el numero de columnas de la primera es igual al numero de filas de la segunda
+        if (cols1 != rows2) {
+            throw new IllegalArgumentException("El numero de columnas de la primera matriz debe ser igual al numero de filas de la segunda");
+        }
+        // Crear una nueva matriz para almacenar el producto
+        double[][] producto = new double[rows1][cols2];
+        // Calcular el producto de las dos matrices
+        for (int i = 0; i < rows1; i++) {
+            for (int j = 0; j < cols2; j++) {
+                for (int k = 0; k < cols1; k++) {
+                    producto[i][j] += array1[i][k] * array2[k][j];
+                }
+            }
+        }
+        return producto;
+    }
+
+    // FUNCION PARA CALCULAR EL DETERMINANTE DE UNA MATRIZ DE ENTEROS
     public static int determinante(int[][] array) {
         // Obtener las filas y columnas de la matriz
         int rows = array.length;
@@ -219,4 +245,46 @@ public class Basicas {
         }
         return subMatriz;
     }
+
+    // FUNCION PARA CALCULAR LA ADJUNTA DE UNA MATRIZ
+    public static int[][] adjunta(int[][] array) {
+        int rows = array.length;
+        int cols = array[0].length;
+        if (rows != cols) {
+            throw new IllegalArgumentException("La matriz debe ser cuadrada para calcular la adjunta");
+        }
+        int[][] adjunta = new int[rows][cols];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                adjunta[i][j] = (int) Math.pow(-1, i + j) * determinante(subMatriz(array, i, j));
+            }
+        }
+        return adjunta;
+    }
+
+    // FUNCION PARA CALCULAR LA MATRIZ INVERSA DE ENTEROS (ADJUNTA(TRASPUESTA) / DETERMINANTE)
+    public static double[][] inversa(int[][] array) {
+        int rows = array.length;
+        int cols = array[0].length;
+        if (rows != cols) {
+            throw new IllegalArgumentException("La matriz debe ser cuadrada para calcular la inversa");
+        }
+        // Calcular el determinante
+        int det = determinante(array);
+        if (det == 0) {
+            throw new IllegalArgumentException("La matriz no tiene inversa porque su determinante es 0");
+        }
+        // Calcular la matriz adjunta de la traspuesta
+        int[][] adjuntaTraspuesta = adjunta(trasponerMatriz(array));
+        // Calcular la matriz inversa
+        double[][] inversa = new double[rows][cols];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                inversa[i][j] = (double) adjuntaTraspuesta[i][j] / det;
+            }
+        }
+        return inversa;
+    }
+
+    // ...
 }
