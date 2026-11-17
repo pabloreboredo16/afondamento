@@ -24,9 +24,9 @@ public class Test7 {
         int[][] matriz2 = rellenarMatriz(rows2, cols2);
 
         // Pedir el número de filas y columnas de la tercera matriz
-        System.out.println("\nIntroduce el número de filas de la segunda matriz: ");
+        System.out.println("\nIntroduce el número de filas de la tercera matriz: ");
         int rows3 = Integer.parseInt(sc.nextLine());
-        System.out.println("Introduce el número de columnas de la segunda matriz: ");
+        System.out.println("Introduce el número de columnas de la tercera matriz: ");
         int cols3 = Integer.parseInt(sc.nextLine());
         int[][] matriz3 = rellenarMatriz(rows3, cols3);
 
@@ -38,7 +38,7 @@ public class Test7 {
         System.out.println("\nMatriz 3:");
         imprimirMatriz(matriz3);
 
-        // Calcular el pruducto de matrices 
+        // Calcular el producto de matrices 
         int[][] producto = productoMatrices(productoMatrices(matriz1, matriz2), matriz3);
 
         System.out.println("\nProducto de las matrices: ");

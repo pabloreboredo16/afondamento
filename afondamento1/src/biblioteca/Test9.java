@@ -2,13 +2,9 @@ package biblioteca;
 
 import static biblioteca.Basicas.*;
 
-import java.util.Scanner;
-
 public class Test9 {
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
         // Pedir una matriz 3x3
         System.out.println("Introduce una matriz 3x3");
         int[][] matriz = rellenarMatriz(3, 3);

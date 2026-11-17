@@ -22,8 +22,8 @@ public class Test5 {
         int cols2 = Integer.parseInt(sc.nextLine());
 
         // Rellenar matrices
-        int[][] matriz2 = rellenarMatriz(rows2, cols2);
         int[][] matriz1 = rellenarMatriz(rows1, cols1);
+        int[][] matriz2 = rellenarMatriz(rows2, cols2);
         
         // Mostrar la primera matriz
         System.out.println("\nMatriz 1:");

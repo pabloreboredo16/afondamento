@@ -246,6 +246,29 @@ public class Basicas {
         return subMatriz;
     }
 
+    // FUNCION PARA COMPROBAR SI DOS MATRICES SON IGUALES
+    public static boolean matricesIguales(int[][] A, int[][] B) {
+        // Obtener las filas y columnas de las matrices
+        int rows1 = A.length;
+        int cols1 = A[0].length;
+        int rows2 = B.length;
+        int cols2 = B[0].length;
+        // Dos matrices solo pueden ser iguales si tienen el mismo tamaño
+        if (rows1 != rows2 || cols1 != cols2) {
+            return false;
+        }
+        boolean sonIguales = true;
+        // Comprobar si A[i][j] es igual a B[i][j] en cada posición
+        for (int i = 0; i < rows1; i++) {
+            for (int j = 0; j < cols1; j++) {
+                if (A[i][j] != B[i][j]) {
+                    return false;
+                }
+            }
+        }
+        return sonIguales;
+    }
+    
     // FUNCION PARA CALCULAR LA ADJUNTA DE UNA MATRIZ
     public static int[][] adjunta(int[][] array) {
         int rows = array.length;
@@ -285,6 +308,4 @@ public class Basicas {
         }
         return inversa;
     }
-
-    // ...
 }
