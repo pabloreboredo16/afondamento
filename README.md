@@ -11,6 +11,7 @@ El código (`src/`) se encuentra organizado por:
 - **Propiedades y Análisis:**
   - Matriz traspuesta.
   - Cálculo de la traza.
-  - Comprobación de simetría.
+  - Comprobación de simetría e igualdad.
   - Verificación de matriz diagonal.
   - Calculo del determinante.
+  - Matriz adjunta e inversa
