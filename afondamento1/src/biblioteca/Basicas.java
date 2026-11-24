@@ -27,8 +27,6 @@ public class Basicas {
         System.out.println();
     }
 }
-
-    // FUNCION PARA IMPRIMIR MATRIZ DE DOUBLES (3 DECIMALES)
     public static void imprimirMatriz(double[][] array) {
         for(double[] row : array) {
             for(double elemento : row) {
@@ -308,4 +306,66 @@ public class Basicas {
         }
         return inversa;
     }
+
+    // FUNCION PARA OBTENER LA MATRIZ IDENTIDAD DE UN TAMAÑO DADO
+    public static int[][] matrizIdentidadI(int size) {
+        int[][] identidad = new int[size][size];
+        for(int i = 0; i < size; i++) {
+            identidad[i][i] = 1;
+        }
+        return identidad;
+    }
+    public static double[][] matrizIdentidadD(int size) {
+        double[][] identidad = new double[size][size];
+        for(int i = 0; i < size; i++) {
+            identidad[i][i] = 1.0;
+        }
+        return identidad;
+    }
+
+    // RESOLVER UN SISTEMA DE ECUACIONES LINEALES Ax = b USANDO LA INVERSA DE A
+    public static double[] resolverSistemaLineal(int[][] A, int[] b) {
+        int rows = A.length;
+        int cols = A[0].length;
+        if(rows != cols) {
+            throw new IllegalArgumentException("La matriz A debe ser cuadrada para resolver");
+        }
+        if (b.length != rows) {
+            throw new IllegalArgumentException("El vector b debe tener el mismo numero de filas que la matriz");
+        }
+        double[][] A_inversa = inversa(A);
+        double[] x = new double[rows];
+        for(int i = 0; i < rows; i++) {
+            for(int j = 0; j < cols; j++) {
+                x[i] += A_inversa[i][j] * b[j];
+            }
+        }
+        return x;
+    }
+
+    // FUNCION PARA RELLENAR UN VECTOR DE ENTEROS
+    public static int[] rellenarVector(int size) {
+        Scanner sc = new Scanner(System.in);
+        int[] vector = new int[size];
+        System.out.println("Añade " + size + " numeros");
+        for (int i = 0; i < size; i++) {
+            System.out.print("Elemento [" + i + "]: ");
+            vector[i] = Integer.parseInt(sc.nextLine());
+        }
+        return vector;
+    }
+
+    // FUNCION PARA IMPRIMIR VECTOR 
+    public static void imprimirVector(int[] array) {
+        for (int elemento : array) {
+            System.out.printf("%5d\n", elemento);
+        }
+    }
+    public static void imprimirVector(double[] array) {
+        for (double elemento : array) {
+            System.out.printf("%8.3f\n", elemento);
+        }
+    }
+
+    // 
 }
